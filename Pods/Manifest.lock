@@ -24,7 +24,7 @@ DEPENDENCIES:
   - SwiftFormat/CLI
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - CryptoSwift
     - Intercom
     - MarqueeLabel
@@ -50,4 +50,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: fb7da031328e4085727b5e89a4529ca1a21bdd95
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.9.3

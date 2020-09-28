@@ -302,7 +302,7 @@ class AddEthereumWalletViewController: UIViewController, UITextFieldDelegate, AV
             make.trailing.equalToSuperview().offset(-14)
             make.bottom.equalToSuperview()
         }
-        addressTextField.addTarget(self, action: #selector(validate), for: .editingChanged)
+        addressTextField.addTarget(self, action: #selector(validate as () -> Void), for: .editingChanged)
 
         addressFieldContainer.addSubview(pasteButton)
         pasteButton.snp.makeConstraints { make in

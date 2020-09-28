@@ -66,7 +66,6 @@ struct AmberdataAPI {
             .withQueryStringComponents(["includePrice": "true"])
             .go { data, request in
                 let accountBalanceResponse: AmberdataAccountBalanceResponse
-
                 do {
                     accountBalanceResponse = try JSONDecoder().decode(AmberdataAccountBalanceResponse.self, from: data)
                 } catch {
@@ -94,11 +93,13 @@ struct AmberdataAPI {
         AmberdataRequest(fromComponents: ["addresses", wallet.address, "tokens"])
             .withQueryStringComponents(["includePrice": "true"])
             .go { data, request in
-
                 let tokensResponse: AmberdataTokensResponse
-
+                print(request)
+                print(data)
                 do {
                     tokensResponse = try JSONDecoder().decode(AmberdataTokensResponse.self, from: data)
+                    print(AmberdataTokensResponse.self)
+                    print(tokensResponse)
                 } catch {
                     AmberdataAPI.requestDidError(request.request, withError: error)
                     return
@@ -119,10 +120,12 @@ struct AmberdataAPI {
                         fiatBalance = amount.total
                         rate = amount.quote
                         currency = amount.currency
+                        print(fiatBalance)
                     }
 
                     if let amount = tokenInfo.amount, let decimals = tokenInfo.decimals {
                         balance = amount * pow(10.0, 0.0 - Double(decimals))
+                        print(balance)
                     }
 
                     return Token(balance: balance,
@@ -170,7 +173,7 @@ struct AmberdataAPI {
 
 struct AmberdataRequest {
     static let baseURL = URL(string: "https://web3api.io/api/v1/")!
-    static let apiKey: String = ApiKeys.amberdataApiKey
+    static let apiKey: String = "UAKf496fc525e248889f82a408ba330971a"
 
     var request: URLRequest
 
@@ -287,7 +290,6 @@ private struct Tokens: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         records = try container.decode([TokenInfo].self, forKey: .records)
-
         if let records = try? container.decode(Int.self, forKey: .totalRecords) {
             totalRecords = UInt(records)
         } else {

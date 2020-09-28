@@ -274,9 +274,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         case discordButton:
             urlString = "https://discord.gg/KR7hDR7"
         case twitterButton:
-            urlString = "https://twitter.com/Balance_io"
+            urlString = "https://twitter.com/NextGeniusAU"
         case githubButton:
-            urlString = "https://github.com/balance-io"
+            urlString = "https://github.com/fintie/ng-smartwallet.git"
         default:
             break
         }

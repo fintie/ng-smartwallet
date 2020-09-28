@@ -1,6 +1,6 @@
 import UIKit
 
-let apiKey = "UAK26de0212877e2d1b069beef2c76abb90"
+let apiKey = "UAKf496fc525e248889f82a408ba330971a"
 let baseURL = URL(string: "https://web3api.io/api/v1/")!
 
 let session = URLSession.shared
