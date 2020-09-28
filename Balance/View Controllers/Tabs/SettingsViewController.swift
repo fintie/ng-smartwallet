@@ -276,7 +276,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         case twitterButton:
             urlString = "https://twitter.com/NextGeniusAU"
         case githubButton:
-            urlString = "https://github.com/fintie/ng-smartwallet.git"
+            urlString = "https://github.com/fintie/ng-smartwallet"
         default:
             break
         }
